@@ -1,3 +1,38 @@
 /**
 * Accordeon
 */
+
+.accordeon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+details {
+  /* fermé et ouvert */
+  display: flex;
+  align-items: center;
+  flex: 0 0 120px;
+  gap: 1rem;
+  min-width: 0;
+  overflow: hidden;
+  transition: flex-basis 0.6s ease;
+}
+
+details[open] {
+  /* ouvert */
+  flex-basis: 400px;
+}
+
+summary {
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+summary img {
+    display: block;
+    width: 120px;
+    height: 100px;
+    object-fit: cover;
+}
