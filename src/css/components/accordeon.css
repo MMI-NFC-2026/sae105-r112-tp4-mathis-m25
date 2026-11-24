@@ -13,10 +13,10 @@ details {
   /* fermé et ouvert */
   display: flex;
   align-items: center;
-  flex: 0 0 120px;
+  flex: 0 0 145px;
   gap: 1rem;
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
   transition: flex-basis 0.6s ease;
 }
 
@@ -28,6 +28,9 @@ details[open] {
 summary {
     cursor: pointer;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 summary img {
@@ -44,4 +47,21 @@ summary img {
 .accordeon > details > summary::marker,
 .accordeon > details > summary::-webkit-details-marker {
   display: none;
+}
+
+.accordeon > details > summary::after {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  width: 0;
+  height: 0;
+  margin-right: 0.5rem;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid black;
+  transition: transform 0.3s ease;
+}
+
+.accordeon > details[open] > summary::after {
+  transform: rotate(90deg);
 }
